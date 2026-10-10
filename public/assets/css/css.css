@@ -1,0 +1,293 @@
+:root {
+    color-scheme: light;
+    --ink: #30251f;
+    --muted: #796e65;
+    --paper: #fffdf9;
+    --canvas: #f5f0e8;
+    --line: #e6ddd1;
+    --tomato: #bd5738;
+    --tomato-dark: #99432b;
+    --herb: #55755a;
+    --shadow: 0 10px 28px rgb(48 37 31 / 8%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    padding: 1rem clamp(1rem, 4vw, 3rem);
+    background: #34271f;
+    color: #fffaf3;
+    box-shadow: 0 3px 12px rgb(30 23 19 / 18%);
+}
+
+header h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-left: auto;
+}
+
+header nav a {
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.5rem;
+    color: #fffaf3;
+    text-decoration: none;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+    background: rgb(255 255 255 / 12%);
+    outline: none;
+}
+
+header > p {
+    margin: 0;
+    color: #e7d8c9;
+    font-size: 0.9rem;
+}
+
+header form {
+    margin: 0;
+}
+
+main {
+    width: min(1160px, calc(100% - 2rem));
+    min-height: calc(100vh - 100px);
+    margin: 2rem auto;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+
+main > p:first-child {
+    margin-top: 0;
+}
+
+a {
+    color: var(--tomato-dark);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--tomato);
+}
+
+main > p a {
+    display: inline-block;
+    padding: 0.65rem 0.95rem;
+    border-radius: 0.55rem;
+    background: var(--herb);
+    color: white;
+    text-decoration: none;
+}
+
+main > p a:hover {
+    background: #405f45;
+    color: white;
+}
+
+main > form {
+    max-width: 680px;
+    margin: 1rem auto;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--line);
+    border-radius: 0.85rem;
+    background: #fffaf3;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    color: var(--ink);
+    font-weight: 650;
+}
+
+input,
+select,
+textarea {
+    width: min(100%, 34rem);
+    min-height: 2.7rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #cfc3b5;
+    border-radius: 0.5rem;
+    background: white;
+    color: var(--ink);
+    font: inherit;
+}
+
+input[type="file"] {
+    padding: 0.45rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--herb);
+    outline: 3px solid rgb(85 117 90 / 18%);
+}
+
+button {
+    min-height: 2.55rem;
+    padding: 0.55rem 0.95rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: var(--tomato);
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--tomato-dark);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #d99a69;
+    outline-offset: 2px;
+}
+
+main > form > p {
+    margin: 0 0 1rem;
+}
+
+main > form > a {
+    margin-left: 0.7rem;
+}
+
+table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.7rem;
+}
+
+th,
+td {
+    padding: 0.8rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #eee5d9;
+    color: #42352c;
+    font-size: 0.9rem;
+    letter-spacing: 0.025em;
+}
+
+tbody tr:nth-child(even) {
+    background: #fdf9f3;
+}
+
+tbody tr:hover {
+    background: #f6efe5;
+}
+
+td form {
+    display: inline-block;
+    margin: 0 0 0 0.4rem;
+}
+
+td button {
+    min-height: 2.1rem;
+    padding: 0.35rem 0.65rem;
+    background: #8d4938;
+    font-size: 0.9rem;
+}
+
+td img,
+main > form img {
+    display: block;
+    max-width: 120px;
+    max-height: 100px;
+    border: 1px solid var(--line);
+    border-radius: 0.55rem;
+    object-fit: cover;
+}
+
+p[role="status"],
+p[role="alert"] {
+    padding: 0.75rem 1rem;
+    border-radius: 0.55rem;
+}
+
+p[role="status"] {
+    border: 1px solid #bbd0ba;
+    background: #eef6eb;
+    color: #31583b;
+}
+
+p[role="alert"],
+ul[role="alert"] {
+    border: 1px solid #e3b7a9;
+    background: #fff0eb;
+    color: #7b3426;
+}
+
+ul[role="alert"] {
+    padding: 0.75rem 1rem 0.75rem 2rem;
+    border-radius: 0.55rem;
+}
+
+@media (max-width: 760px) {
+    header {
+        align-items: flex-start;
+        gap: 0.65rem;
+    }
+
+    header nav {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    header > p {
+        align-self: center;
+    }
+
+    main {
+        width: min(100% - 1rem, 1160px);
+        margin: 0.5rem auto;
+        padding: 1rem;
+        border-radius: 0.7rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 0.65rem;
+    }
+}
